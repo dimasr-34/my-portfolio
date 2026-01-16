@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimas Rokhim - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #020617;
+            --text-primary: #f8fafc;
+            --card-bg: rgba(15, 23, 42, 0.6);
+        }
+
+        html:not(.dark-mode) {
+            --bg-primary: #f8fafc;
+            --text-primary: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        html { scroll-behavior: smooth; transition: background-color 0.5s ease; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+            background: var(--bg-primary); 
+            color: var(--text-primary);
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mode Terang Overrides */
+        html:not(.dark-mode) .glass-card {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        html:not(.dark-mode) .text-slate-400 { color: #64748b; }
+        html:not(.dark-mode) .text-slate-300 { color: #334155; }
+        html:not(.dark-mode) .bg-slate-900 { background-color: #f1f5f9; }
+        html:not(.dark-mode) .bg-slate-950 { background-color: #ffffff; }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-mt-20 {
+            scroll-margin-top: 5rem;
+        }
+
+        /* Animasi Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="selection:bg-indigo-500/30">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
