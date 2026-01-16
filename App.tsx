@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
-import AIAssistant from './components/AIAssistant';
+// import AIAssistant from './components/AIAssistant';
 import ConstellationBackground from './components/ConstellationBackground';
 import { useReveal } from './hooks/useReveal';
 
@@ -72,7 +72,7 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      <AIAssistant />
+      {/* <AIAssistant /> */}
     </div>
   );
 };
